@@ -4,6 +4,7 @@ package com.sebkewmeszke.uemod;
 /**
  * Created by Ankor on 03.05.2017.
  */
+import com.sebkewmeszke.uemod.item.berylliumIngot;
 import com.sebkewmeszke.uemod.proxy.CommonProxy;
 import com.sebkewmeszke.uemod.tab.CreativeTabUE;
 import net.minecraft.creativetab.CreativeTabs;
@@ -17,7 +18,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
 @Mod(modid = Main.MODID, name = Main.MODNAME,version = Main.VERSION)
 public class Main {
-    public static final String MODID = "assets/uemod";
+    public static final String MODID = "uemod";
     public static final String MODNAME = "Ultra Expansion Mod";
     public static final String VERSION = "0.1";
 
@@ -32,7 +33,8 @@ public class Main {
     @EventHandler
     public void preInit(FMLPreInitializationEvent e){
         proxy.preInit(e);
-        uETab = new CreativeTabUE(CreativeTabs.getNextID(),"uEMTab");
+        uETab = new CreativeTabUE(CreativeTabs.getNextID(),"uemtab");
+        berylliumIngot.preinit();
     }
 
     @EventHandler
